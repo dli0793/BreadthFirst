@@ -1,32 +1,34 @@
-
 import java.util.ArrayList;
 
 public class Node 
 {
-	int posX;
-	int posY;
+	String name;
 	ArrayList<Node> children;
-	Node parent;
 	
-	public Node(int posX, int posY, ArrayList<Node> children, Node parent)
+	public Node(String name, ArrayList<Node> children)
 	{
-		this.posX = posX;
-		this.posY = posY;
+		this.name = name;
 		this.children = children;
-		this.parent = parent;
 	}
 	
-	
-	public ArrayList<Node> getChildren()
+	public ArrayList<Node> getChildren() 
 	{
-		ArrayList<Node> childNodes = new ArrayList<>();
-		Node topNode = new Node(posX,posY+1,children,parent);
-		Node bottomNode = new Node(posX,posY-1,children,parent);
-		Node leftNode = new Node(posX-1,posY,children,parent);
-		Node rightNode = new Node(posX+1,posY,children,parent);
-		Node nwNode = new Node(posX-1,posY+1,children,parent);
-		Node neNode = new Node(posX+1,posY+1,children,parent);
-		Node swNode
+		return children;
 	}
+
+	public void setChildren(ArrayList<Node> children) 
+	{
+		this.children = children;
+	}
+
+	public boolean removeChild(Node n)
+	{
+		return false;
+	}
+
+	public String toString() 
+	{
+		return name;
+	}	
 	
 }
